@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroHoracio | Astrophotography Portfolio</title>
+    <meta name="description" content="Professional astrophotography services, courses, prints, and editing sessions">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --near-black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #999;
+            --accent: #4a9eff;
+            --accent-hover: #6bb0ff;
+            --white: #ffffff;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .lang-toggle {
+            background: transparent;
+            border: 1px solid var(--medium-gray);
+            color: var(--light-gray);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION - UPDATED ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
+            background: linear-gradient(180deg, var(--black) 0%, var(--near-black) 100%);
+            position: relative;
+            margin-top: 80px;
+            padding-top: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(74, 158, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: var(--light-gray);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        /* Panoramic Video Container */
+        .hero-video-container {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: var(--spacing-md);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .hero-video-container img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Personal Photo */
+        .hero-personal-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent);
+            box-shadow: 0 10px 40px rgba(74, 158, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-personal-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-name {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: var(--spacing-xl) var(--spacing-md);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.1rem;
+        }
+
+        /* ===== GALLERY - UPDATED ===== */
+        .gallery-filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            color: var(--light-gray);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--dark-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .lightbox-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.15);
+            letter-spacing: 0.1em;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover {
+            background: var(--accent-hover);
+            transform: rotate(90deg);
+        }
+
+        /* ===== SESSIONS ===== */
+        .session-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .session-card h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .session-details {
+            color: var(--light-gray);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .session-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .session-features {
+            list-style: none;
+            margin-bottom: var(--spacing-md);
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .session-features li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .session-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== COURSES ===== */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: var(--spacing-lg);
+        }
+
+        .course-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .course-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: var(--black);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            z-index: 10;
+        }
+
+        .course-level {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--accent);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .course-card p {
+            color: var(--light-gray);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .course-duration {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .course-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--accent);
+        }
+
+        .locked-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* ===== PRINT SHOP - UPDATED ===== */
+        .prints-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: var(--spacing-lg);
+        }
+
+        .print-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .print-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .print-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gray);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .print-image:hover {
+            transform: scale(1.05);
+        }
+
+        .print-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .print-info {
+            padding: var(--spacing-md);
+        }
+
+        .print-info h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.3rem;
+        }
+
+        .print-sizes {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            padding: 0.4rem 0.8rem;
+            background: var(--medium-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .size-option:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .size-option.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+
+        .print-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--accent);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--near-black);
+            border-top: 1px solid var(--medium-gray);
+            padding: var(--spacing-lg) var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--light-gray);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--medium-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--medium-gray);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-personal-photo {
+                margin: 0 auto;
+            }
+
+            .cta-group {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-video-container {
+                max-width: 100%;
+            }
+        }
+
+        /* ===== UTILITY ===== */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Prevent right-click on images */
+        img {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="logo">AstroHoracio</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a></li>
+                <li><a href="#sessions" data-en="Editing Sessions" data-es="Sesiones de Edición">Editing Sessions</a></li>
+                <li><a href="#courses" data-en="Courses" data-es="Cursos">Courses</a></li>
+                <li><a href="#prints" data-en="Print Shop" data-es="Tienda de Impresiones">Print Shop</a></li>
+            </ul>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="lang-toggle" id="langToggle">EN | ES</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION - UPDATED -->
+    <section class="hero" id="home">
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <h1 data-en="Capturing the Cosmos" data-es="Capturando el Cosmos">Capturing the Cosmos</h1>
+                <p class="hero-subtitle" data-en="Professional astrophotography services, expert editing sessions, comprehensive courses, and stunning prints from the depths of space." data-es="Servicios profesionales de astrofotografía, sesiones de edición expertas, cursos completos e impresionantes impresiones desde las profundidades del espacio.">
+                    Professional astrophotography services, expert editing sessions, comprehensive courses, and stunning prints from the depths of space.
+                </p>
+
+                <!-- Panoramic Landscape Photo -->
+                <div class="hero-video-container">
+                    <img src="Assets/images/hero-landscape.jpg" alt="Astrophotography Landscape" onclick="window.open(this.src, '_blank')">
+                </div>
+
+                <div class="cta-group">
+                    <a href="#gallery" class="btn btn-primary" data-en="View Gallery" data-es="Ver Galería">View Gallery</a>
+                    <a href="#sessions" class="btn btn-secondary" data-en="Editing Sessions" data-es="Sesiones de Edición">Editing Sessions</a>
+                    <a href="#courses" class="btn btn-secondary" data-en="Courses" data-es="Cursos">Courses</a>
+                    <a href="#prints" class="btn btn-secondary" data-en="Print Shop" data-es="Tienda">Print Shop</a>
+                </div>
+            </div>
+
+            <!-- Personal Photo -->
+            <div>
+                <div class="hero-personal-photo">
+                    <img src="Assets/images/personal-photo.jpg" alt="Horacio Lander - Astrophotographer">
+                </div>
+                <p class="hero-name">Horacio Lander</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION - UPDATED WITH LIGHTBOX -->
+    <section class="section" id="gallery">
+        <h2 class="section-title" data-en="Gallery" data-es="Galería">Gallery</h2>
+        <p class="section-subtitle" data-en="Explore the universe through my lens. Each image captures the beauty and mystery of the night sky." data-es="Explora el universo a través de mi lente. Cada imagen captura la belleza y el misterio del cielo nocturno.">
+            Explore the universe through my lens. Each image captures the beauty and mystery of the night sky.
+        </p>
+        
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-category="all" data-en="All" data-es="Todas">All</button>
+            <button class="filter-btn" data-category="milkyway" data-en="Milky Way" data-es="Vía Láctea">Milky Way</button>
+            <button class="filter-btn" data-category="deepsky" data-en="Deep Sky" data-es="Cielo Profundo">Deep Sky</button>
+            <button class="filter-btn" data-category="landscape" data-en="Astro Landscape" data-es="Paisaje Astro">Astro Landscape</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items will be generated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-watermark">AstroHoracio</div>
+        </div>
+    </div>
+
+    <!-- EDITING SESSIONS SECTION -->
+    <section class="section" id="sessions">
+        <h2 class="section-title" data-en="1-to-1 Editing Sessions" data-es="Sesiones de Edición 1-a-1">1-to-1 Editing Sessions</h2>
+        <p class="section-subtitle" data-en="Master the art of astrophotography post-processing with personalized guidance." data-es="Domina el arte del procesamiento posterior de astrofotografía con orientación personalizada.">
+            Master the art of astrophotography post-processing with personalized guidance.
+        </p>
+
+        <div class="session-card">
+            <h3 data-en="Personal Editing Session" data-es="Sesión de Edición Personal">Personal Editing Session</h3>
+            <p class="session-details">
+                <span data-en="Duration: 1 hour 30 minutes" data-es="Duración: 1 hora 30 minutos">Duration: 1 hour 30 minutes</span>
+            </p>
+            <div class="session-price">€49</div>
+            <ul class="session-features">
+                <li data-en="✓ One-on-one video session" data-es="✓ Sesión de video uno a uno">✓ One-on-one video session</li>
+                <li data-en="✓ Work on your own images" data-es="✓ Trabaja en tus propias imágenes">✓ Work on your own images</li>
+                <li data-en="✓ Professional editing techniques" data-es="✓ Técnicas de edición profesionales">✓ Professional editing techniques</li>
+                <li data-en="✓ Workflow optimization" data-es="✓ Optimización de flujo de trabajo">✓ Workflow optimization</li>
+                <li data-en="✓ Custom presets included" data-es="✓ Preajustes personalizados incluidos">✓ Custom presets included</li>
+            </ul>
+            <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Book & Pay with PayPal" data-es="Reservar y Pagar con PayPal">Book & Pay with PayPal</a>
+        </div>
+    </section>
+
+    <!-- COURSES SECTION -->
+    <section class="section" id="courses">
+        <h2 class="section-title" data-en="Courses" data-es="Cursos">Courses</h2>
+        <p class="section-subtitle" data-en="Comprehensive astrophotography education from beginner to advanced levels." data-es="Educación completa en astrofotografía desde niveles principiantes hasta avanzados.">
+            Comprehensive astrophotography education from beginner to advanced levels.
+        </p>
+
+        <div class="courses-grid">
+            <!-- Beginner Courses -->
+            <div class="course-card">
+                <div class="coming-soon-badge" data-en="Coming Soon" data-es="Próximamente">Coming Soon</div>
+                <span class="course-level" data-en="Beginner" data-es="Principiante">Beginner</span>
+                <span class="locked-badge" data-en="🔒 Content Locked" data-es="🔒 Contenido Bloqueado">🔒 Content Locked</span>
+                <h3 data-en="Astrophotography Fundamentals" data-es="Fundamentos de Astrofotografía">Astrophotography Fundamentals</h3>
+                <p data-en="Learn the basics of capturing the night sky, from camera settings to composition." data-es="Aprende los conceptos básicos de capturar el cielo nocturno, desde la configuración de la cámara hasta la composición.">
+                    Learn the basics of capturing the night sky, from camera settings to composition.
+                </p>
+                <div class="course-duration" data-en="Duration: 4 weeks" data-es="Duración: 4 semanas">Duration: 4 weeks</div>
+                <div class="course-price">€69</div>
+                <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+            </div>
+
+            <div class="course-card">
+                <div class="coming-soon-badge" data-en="Coming Soon" data-es="Próximamente">Coming Soon</div>
+                <span class="course-level" data-en="Beginner" data-es="Principiante">Beginner</span>
+                <span class="locked-badge" data-en="🔒 Content Locked" data-es="🔒 Contenido Bloqueado">🔒 Content Locked</span>
+                <h3 data-en="Milky Way Photography" data-es="Fotografía de la Vía Láctea">Milky Way Photography</h3>
+                <p data-en="Master the art of capturing our galaxy with stunning clarity and detail." data-es="Domina el arte de capturar nuestra galaxia con una claridad y detalle impresionantes.">
+                    Master the art of capturing our galaxy with stunning clarity and detail.
+                </p>
+                <div class="course-duration" data-en="Duration: 3 weeks" data-es="Duración: 3 semanas">Duration: 3 weeks</div>
+                <div class="course-price">€79</div>
+                <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+            </div>
+
+            <!-- Advanced Courses -->
+            <div class="course-card">
+                <div class="coming-soon-badge" data-en="Coming Soon" data-es="Próximamente">Coming Soon</div>
+                <span class="course-level" style="background: #ff6b6b;" data-en="Advanced" data-es="Avanzado">Advanced</span>
+                <span class="locked-badge" data-en="🔒 Content Locked" data-es="🔒 Contenido Bloqueado">🔒 Content Locked</span>
+                <h3 data-en="Deep Sky Imaging" data-es="Imagen del Cielo Profundo">Deep Sky Imaging</h3>
+                <p data-en="Advanced techniques for capturing nebulae, galaxies, and star clusters." data-es="Técnicas avanzadas para capturar nebulosas, galaxias y cúmulos estelares.">
+                    Advanced techniques for capturing nebulae, galaxies, and star clusters.
+                </p>
+                <div class="course-duration" data-en="Duration: 6 weeks" data-es="Duración: 6 semanas">Duration: 6 weeks</div>
+                <div class="course-price">€149</div>
+                <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+            </div>
+
+            <div class="course-card">
+                <div class="coming-soon-badge" data-en="Coming Soon" data-es="Próximamente">Coming Soon</div>
+                <span class="course-level" style="background: #ff6b6b;" data-en="Advanced" data-es="Avanzado">Advanced</span>
+                <span class="locked-badge" data-en="🔒 Content Locked" data-es="🔒 Contenido Bloqueado">🔒 Content Locked</span>
+                <h3 data-en="Advanced Post-Processing" data-es="Procesamiento Avanzado">Advanced Post-Processing</h3>
+                <p data-en="Professional editing workflows, stacking, and enhancement techniques." data-es="Flujos de trabajo de edición profesionales, apilamiento y técnicas de mejora.">
+                    Professional editing workflows, stacking, and enhancement techniques.
+                </p>
+                <div class="course-duration" data-en="Duration: 5 weeks" data-es="Duración: 5 semanas">Duration: 5 weeks</div>
+                <div class="course-price">€189</div>
+                <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINT SHOP SECTION - UPDATED WITH DYNAMIC PRICING -->
+    <section class="section" id="prints">
+        <h2 class="section-title" data-en="Print Shop" data-es="Tienda de Impresiones">Print Shop</h2>
+        <p class="section-subtitle" data-en="Museum-quality prints of cosmic wonders for your home or office." data-es="Impresiones de calidad museística de maravillas cósmicas para tu hogar u oficina.">
+            Museum-quality prints of cosmic wonders for your home or office.
+        </p>
+
+        <div class="prints-grid">
+            <div class="print-card" data-print="1">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print1.png', 'Stellar Nursery')">
+                    <img src="Assets/prints/print1.png" alt="Orion Nebula Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Stellar Nursery" data-es="Cuna Estelar">Stellar Nursery</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="2">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print2.png', 'Galactic Center')">
+                    <img src="Assets/prints/print2.png" alt="Milky Way Core Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Galactic Center" data-es="Centro Galáctico">Galactic Center</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="3">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print3.png', 'Celestial Motion')">
+                    <img src="Assets/prints/print3.png" alt="Star Trails Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Celestial Motion" data-es="Movimiento Celestial">Celestial Motion</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="4">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print4.png', 'Cosmic Silhouette')">
+                    <img src="Assets/prints/print4.png" alt="Horsehead Nebula Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Cosmic Silhouette" data-es="Silueta Cósmica">Cosmic Silhouette</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="5">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print5.png', 'Blood Moon')">
+                    <img src="Assets/prints/print5.png" alt="Lunar Eclipse Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Blood Moon" data-es="Luna de Sangre">Blood Moon</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="6">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print6.png', 'Orion Landscape')">
+                    <img src="Assets/prints/print6.png" alt="Orion Nebula Landscape Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Orion Landscape" data-es="Paisaje de Orión">Orion Landscape</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="7">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print7.png', 'Nebula Dreams')">
+                    <img src="Assets/prints/print7.png" alt="Nebula Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Nebula Dreams" data-es="Sueños de Nebulosa">Nebula Dreams</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+
+            <div class="print-card" data-print="8">
+                <div class="print-image" onclick="openLightbox('Assets/prints/print8.png', 'Cosmic Heart')">
+                    <img src="Assets/prints/print8.png" alt="Heart Nebula Print" oncontextmenu="return false;">
+                </div>
+                <div class="print-info">
+                    <h3 data-en="Cosmic Heart" data-es="Corazón Cósmico">Cosmic Heart</h3>
+                    <div class="print-sizes">
+                        <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
+                        <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
+                        <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
+                    </div>
+                    <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4 data-en="About" data-es="Acerca de">About</h4>
+                <p data-en="AstroHoracio is dedicated to capturing the beauty of the cosmos and sharing the wonder of astrophotography with the world." data-es="AstroHoracio se dedica a capturar la belleza del cosmos y compartir la maravilla de la astrofotografía con el mundo.">
+                    AstroHoracio is dedicated to capturing the beauty of the cosmos and sharing the wonder of astrophotography with the world.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4 data-en="Quick Links" data-es="Enlaces Rápidos">Quick Links</h4>
+                <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
+                <a href="#sessions" data-en="Editing Sessions" data-es="Sesiones de Edición">Editing Sessions</a>
+                <a href="#courses" data-en="Courses" data-es="Cursos">Courses</a>
+                <a href="#prints" data-en="Print Shop" data-es="Tienda">Print Shop</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4 data-en="Contact" data-es="Contacto">Contact</h4>
+                <a href="mailto:Antares@gmail.com">Antares@gmail.com</a>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/astrohoracio?igsh=MXMwZ2FwcGppeWlmMg==" target="_blank" aria-label="Instagram">IG</a>
+                    <a href="https://www.tiktok.com/@astrohoracio?_r=1&_t=ZN-93CUirDMcX0" target="_blank" aria-label="Tiktok">TK</a>
+                    <a href="https://www.youtube.com/@Astrohoracio" target="_blank" aria-label="YouTube">YT</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 AstroHoracio. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== LANGUAGE SYSTEM =====
+        let currentLang = 'en';
+        
+        function updateLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'BUTTON') {
+                        el.value = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+            
+            document.getElementById('langToggle').textContent = lang === 'en' ? 'EN | ES' : 'ES | EN';
+        }
+
+        document.getElementById('langToggle').addEventListener('click', () => {
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+            updateLanguage(newLang);
+        });
+
+        // ===== MOBILE MENU =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // ===== GALLERY SYSTEM WITH LIGHTBOX =====
+        const galleryData = [
+            { id: 1, category: 'milkyway', title: 'Milky Way Arch', titleEs: 'Arco de la Vía Láctea' },
+            { id: 2, category: 'milkyway', title: 'Galactic Core', titleEs: 'Núcleo Galáctico' },
+            { id: 3, category: 'milkyway', title: 'Desert Sky', titleEs: 'Cielo del Desierto' },
+            { id: 4, category: 'milkyway', title: 'Andromeda Galaxy', titleEs: 'Galaxia de Andrómeda' },
+            { id: 5, category: 'deepsky', title: 'Orion Nebula', titleEs: 'Nebulosa de Orión' },
+            { id: 6, category: 'deepsky', title: 'Pleiades Cluster', titleEs: 'Cúmulo de las Pléyades' },
+            { id: 7, category: 'deepsky', title: 'Mountain Stars', titleEs: 'Estrellas de Montaña' },
+            { id: 8, category: 'deepsky', title: 'Coastal Night', titleEs: 'Noche Costera' },
+            { id: 9, category: 'landscape', title: 'Aurora Borealis', titleEs: 'Aurora Boreal' },
+            { id: 10, category: 'landscape', title: 'Starry Reflection', titleEs: 'Reflejo Estrellado' },
+            { id: 11, category: 'landscape', title: 'Eagle Nebula', titleEs: 'Nebulosa del Águila' },
+            { id: 12, category: 'landscape', title: 'Forest Canopy', titleEs: 'Dosel del Bosque' }
+        ];
+
+        function renderGallery(filterCategory = 'all') {
+            const galleryGrid = document.getElementById('galleryGrid');
+            const filtered = filterCategory === 'all' 
+                ? galleryData 
+                : galleryData.filter(item => item.category === filterCategory);
+
+            galleryGrid.innerHTML = filtered.map(item => `
+                <div class="gallery-item" data-category="${item.category}" onclick="openLightbox('Assets/images/${item.id}.jpg', '${item.title}')">
+                    <img 
+                        src="Assets/images/${item.id}.jpg"
+                        alt="${item.title}"
+                        loading="lazy"
+                        oncontextmenu="return false;"
+                    >
+                    <div class="watermark">© AstroHoracio</div>
+                </div>
+            `).join('');
+        }
+
+        // Lightbox functions
+        function openLightbox(src, alt) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = src;
+            lightboxImage.alt = alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox when clicking outside image
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Gallery filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                const category = e.target.getAttribute('data-category');
+                renderGallery(category);
+            });
+        });
+
+        // Prevent right-click on images
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Initialize gallery
+        renderGallery();
+
+        // ===== PRINT SHOP DYNAMIC PRICING =====
+        document.querySelectorAll('.print-card').forEach(card => {
+            const sizeOptions = card.querySelectorAll('.size-option');
+            const priceDisplay = card.querySelector('.price-value');
+
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove active class from all options in this card
+                    sizeOptions.forEach(opt => opt.classList.remove('active'));
+                    
+                    // Add active class to clicked option
+                    option.classList.add('active');
+                    
+                    // Update price
+                    const price = option.getAttribute('data-price');
+                    priceDisplay.textContent = price;
+                });
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 60;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== LAZY LOAD OPTIMIZATION =====
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            setTimeout(() => {
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }, 100);
+        }
+    </script>
+</body>
+</html>
