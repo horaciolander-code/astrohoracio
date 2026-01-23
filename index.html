@@ -213,6 +213,15 @@
             letter-spacing: 0.5px;
         }
 
+        .hero-bio {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            text-align: center;
+            line-height: 1.6;
+            max-width: 250px;
+        }
+
         .cta-group {
             display: flex;
             gap: 1rem;
@@ -628,6 +637,43 @@
             color: var(--accent);
         }
 
+        .print-note {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin-bottom: var(--spacing-sm);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .payment-note {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            margin-top: 0.5rem;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .prints-footer-note {
+            max-width: 800px;
+            margin: var(--spacing-lg) auto 0;
+            padding: var(--spacing-md);
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .prints-footer-note p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .prints-footer-note p:last-child {
+            margin-bottom: 0;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             background: var(--near-black);
@@ -810,6 +856,9 @@
                     <img src="Assets/images/personal-photo.jpg" alt="Horacio Lander - Astrophotographer">
                 </div>
                 <p class="hero-name">Horacio Lander</p>
+                <p class="hero-bio" data-en="More than 10 years as landscape and astrophotographer. Winner of 35 astrophotography awards, Top 35 in Spain as landscape astrophotographer 2025. Winner of Pexels Photography Night Contest for 2 consecutive years, with over 20k followers across all social media." data-es="Más de 10 años como fotógrafo de paisajes y astrofotógrafo. Ganador de 35 premios de astrofotografía, Top 35 en España como astrofotógrafo de paisajes 2025. Ganador del Concurso de Fotografía Nocturna de Pexels durante 2 años consecutivos, con más de 20k seguidores en todas las redes sociales.">
+                    More than 10 years as landscape and astrophotographer. Winner of 35 astrophotography awards, Top 35 in Spain as landscape astrophotographer 2025. Winner of Pexels Photography Night Contest for 2 consecutive years, with over 20k followers across all social media.
+                </p>
             </div>
         </div>
     </section>
@@ -863,6 +912,7 @@
                 <li data-en="✓ Custom presets included" data-es="✓ Preajustes personalizados incluidos">✓ Custom presets included</li>
             </ul>
             <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Book & Pay with PayPal" data-es="Reservar y Pagar con PayPal">Book & Pay with PayPal</a>
+            <p class="payment-note" data-en="Please add your name and selected option in the payment note" data-es="Por favor añade tu nombre y la opción seleccionada en la nota del pago">Please add your name and selected option in the payment note</p>
         </div>
     </section>
 
@@ -886,6 +936,7 @@
                 <div class="course-duration" data-en="Duration: 4 weeks" data-es="Duración: 4 semanas">Duration: 4 weeks</div>
                 <div class="course-price">€69</div>
                 <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                <p class="payment-note" data-en="Please add your name and course name in the payment note" data-es="Por favor añade tu nombre y el nombre del curso en la nota del pago">Please add your name and course name in the payment note</p>
             </div>
 
             <div class="course-card">
@@ -899,6 +950,7 @@
                 <div class="course-duration" data-en="Duration: 3 weeks" data-es="Duración: 3 semanas">Duration: 3 weeks</div>
                 <div class="course-price">€79</div>
                 <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                <p class="payment-note" data-en="Please add your name and course name in the payment note" data-es="Por favor añade tu nombre y el nombre del curso en la nota del pago">Please add your name and course name in the payment note</p>
             </div>
 
             <!-- Advanced Courses -->
@@ -913,6 +965,7 @@
                 <div class="course-duration" data-en="Duration: 6 weeks" data-es="Duración: 6 semanas">Duration: 6 weeks</div>
                 <div class="course-price">€149</div>
                 <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                <p class="payment-note" data-en="Please add your name and course name in the payment note" data-es="Por favor añade tu nombre y el nombre del curso en la nota del pago">Please add your name and course name in the payment note</p>
             </div>
 
             <div class="course-card">
@@ -926,6 +979,7 @@
                 <div class="course-duration" data-en="Duration: 5 weeks" data-es="Duración: 5 semanas">Duration: 5 weeks</div>
                 <div class="course-price">€189</div>
                 <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                <p class="payment-note" data-en="Please add your name and course name in the payment note" data-es="Por favor añade tu nombre y el nombre del curso en la nota del pago">Please add your name and course name in the payment note</p>
             </div>
         </div>
     </section>
@@ -950,7 +1004,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -966,7 +1022,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -982,7 +1040,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -998,7 +1058,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -1014,7 +1076,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -1030,7 +1094,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -1046,7 +1112,9 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
 
@@ -1062,9 +1130,18 @@
                         <span class="size-option" data-price="44" data-size="60×40 cm">60×40 cm</span>
                     </div>
                     <div class="print-price"><span data-en="From" data-es="Desde">From</span> €<span class="price-value">39</span></div>
+                    <p class="print-note" data-en="Poster only (no frame included)" data-es="Solo póster (sin marco incluido)">Poster only (no frame included)</p>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name, print name, and size in the payment note" data-es="Por favor añade tu nombre, nombre de la impresión y tamaño en la nota del pago">Please add your name, print name, and size in the payment note</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Print Shop Footer Note -->
+        <div class="prints-footer-note">
+            <p data-en="📦 Delivery only in Spain" data-es="📦 Entrega solo en España"><strong>📦 Delivery only in Spain</strong></p>
+            <p data-en="💻 For digital editions, please contact me directly at:" data-es="💻 Para ediciones digitales, contáctame directamente en:"><strong>💻 For digital editions, please contact me directly at:</strong></p>
+            <p><a href="mailto:Antares@gmail.com" style="color: var(--accent);">Antares@gmail.com</a></p>
         </div>
     </section>
 
