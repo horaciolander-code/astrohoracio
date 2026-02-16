@@ -674,6 +674,86 @@
             margin-bottom: 0;
         }
 
+        /* ===== APP DOWNLOAD ===== */
+        .app-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, var(--dark-gray) 0%, #111 100%);
+            border: 1px solid var(--medium-gray);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .app-badge {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            background: rgba(74, 158, 255, 0.15);
+            border: 1px solid rgba(74, 158, 255, 0.4);
+            color: var(--accent-hover);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .app-card h3 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            margin-bottom: 0.6rem;
+        }
+
+        .app-description {
+            color: var(--light-gray);
+            margin-bottom: var(--spacing-md);
+            max-width: 760px;
+        }
+
+        .app-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .app-meta-item {
+            background: var(--near-black);
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            padding: 0.45rem 0.8rem;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .app-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .app-note {
+            color: var(--light-gray);
+            font-size: 0.92rem;
+            border-top: 1px solid var(--medium-gray);
+            padding-top: var(--spacing-sm);
+        }
+
+        .app-code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            color: #9fd0ff;
+            word-break: break-all;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             background: var(--near-black);
@@ -820,6 +900,7 @@
                 <li><a href="#sessions" data-en="Editing Sessions" data-es="Sesiones de Edición">Editing Sessions</a></li>
                 <li><a href="#courses" data-en="Courses" data-es="Cursos">Courses</a></li>
                 <li><a href="#prints" data-en="Print Shop" data-es="Tienda de Impresiones">Print Shop</a></li>
+                <li><a href="#app" data-en="App Download" data-es="Descargar App">App Download</a></li>
             </ul>
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <button class="lang-toggle" id="langToggle">EN | ES</button>
@@ -847,6 +928,7 @@
                     <a href="#sessions" class="btn btn-secondary" data-en="Editing Sessions" data-es="Sesiones de Edición">Editing Sessions</a>
                     <a href="#courses" class="btn btn-secondary" data-en="Courses" data-es="Cursos">Courses</a>
                     <a href="#prints" class="btn btn-secondary" data-en="Print Shop" data-es="Tienda">Print Shop</a>
+                    <a href="#app" class="btn btn-secondary" data-en="Download App" data-es="Descargar App">Download App</a>
                 </div>
             </div>
 
@@ -856,8 +938,8 @@
                     <img src="Assets/images/personal-photo.jpg" alt="Horacio Lander - Astrophotographer">
                 </div>
                 <p class="hero-name">Horacio Lander</p>
-                <p class="hero-bio" data-en="More than 10 years as landscape and astrophotographer. Winner of 35 astrophotography awards, Top 35 in Spain as landscape astrophotographer 2025. Winner of Pexels Photography Night Contest for 2 consecutive years, with over 20k followers across all social media." data-es="Más de 10 años como fotógrafo de paisajes y astrofotógrafo. Ganador de 35 premios de astrofotografía, Top 35 en España como astrofotógrafo de paisajes 2025. Ganador del Concurso de Fotografía Nocturna de Pexels durante 2 años consecutivos, con más de 20k seguidores en todas las redes sociales.">
-                    More than 10 years as landscape and astrophotographer. Winner of 35 astrophotography awards, Top 35 in Spain as landscape astrophotographer 2025. Winner of Pexels Photography Night Contest for 2 consecutive years, with over 20k followers across all social media.
+                <p class="hero-bio" data-en="More than 10 years as landscape and astrophotographer. Winner of 35awards astrophotography, Top 30 in Spain as landscape photographer 2025. Winner of Pexels Photography Night Contest for 2 consecutive years, with over 20k followers across all social media." data-es="Más de 10 años como fotógrafo de paisajes y astrofotógrafo. Ganador de 35awards de astrofotografía, Top 30 en España como fotografo en los 35awards de paisajes 2025. Ganador del Concurso de Fotografía Nocturna de Pexels durante 2 años consecutivos, con más de 20k seguidores en todas las redes sociales.">
+                    More than 10 years as landscape and astrophotographer. Winner of 35awards astrophotography, Top 30 in Spain as landscape photographer 2025. Winner of Pexels Photography Night Contest for 2 consecutive years, with over 20k followers across all social media.
                 </p>
             </div>
         </div>
@@ -1069,7 +1151,7 @@
                     <img src="Assets/prints/print5.png" alt="Lunar Eclipse Print" oncontextmenu="return false;">
                 </div>
                 <div class="print-info">
-                    <h3 data-en="Blood Moon" data-es="Luna de Sangre">Blood Moon</h3>
+                    <h3 data-en="Blood king" data-es="Rey de Sangre">Blood Moon</h3>
                     <div class="print-sizes">
                         <span class="size-option active" data-price="39" data-size="40×30 cm">40×30 cm</span>
                         <span class="size-option" data-price="41" data-size="50×40 cm">50×40 cm</span>
@@ -1141,7 +1223,43 @@
         <div class="prints-footer-note">
             <p data-en="📦 Delivery only in Spain" data-es="📦 Entrega solo en España"><strong>📦 Delivery only in Spain</strong></p>
             <p data-en="💻 For digital editions, please contact me directly at:" data-es="💻 Para ediciones digitales, contáctame directamente en:"><strong>💻 For digital editions, please contact me directly at:</strong></p>
-            <p><a href="mailto:Antares@gmail.com" style="color: var(--accent);">Antares@gmail.com</a></p>
+            <p><a href="mailto:astroian2026@gmail.com" style="color: var(--accent);">astroian2026@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!-- APP DOWNLOAD SECTION -->
+    <section class="section" id="app">
+        <h2 class="section-title" data-en="Nightscape Processor App" data-es="App Nightscape Processor">Nightscape Processor App</h2>
+        <p class="section-subtitle" data-en="Download the official desktop app for astrophotography processing workflows." data-es="Descarga la aplicación oficial de escritorio para flujos de procesado astrofotográfico.">
+            Download the official desktop app for astrophotography processing workflows.
+        </p>
+
+        <div class="app-card">
+            <div class="app-header">
+                <span class="app-badge" data-en="Windows Release" data-es="Versión Windows">Windows Release</span>
+                <span class="app-meta-item">v1.6.1 · 33 MB</span>
+            </div>
+
+            <h3 data-en="Nightscape Processor Setup" data-es="Instalador Nightscape Processor">Nightscape Processor Setup</h3>
+            <p class="app-description" data-en="One-click installer for your Astro processing tool. This is a draft block ready for release integration from GitHub Releases." data-es="Instalador de un clic para tu herramienta de procesado Astro. Este es un bloque draft listo para integrar con GitHub Releases.">
+                One-click installer for your Astro processing tool. This is a draft block ready for release integration from GitHub Releases.
+            </p>
+
+            <div class="app-meta">
+                <span class="app-meta-item" data-en="Platform: Windows 10/11" data-es="Plataforma: Windows 10/11">Platform: Windows 10/11</span>
+                <span class="app-meta-item" data-en="Type: .exe installer" data-es="Tipo: instalador .exe">Type: .exe installer</span>
+                <span class="app-meta-item" data-en="Distribution: GitHub Releases" data-es="Distribución: GitHub Releases">Distribution: GitHub Releases</span>
+            </div>
+
+            <div class="app-actions">
+                <a id="appDownloadBtn" href="https://github.com/OWNER/REPO/releases/latest/download/NightscapeProcessor_Setup_Windows.exe" target="_blank" rel="noopener" class="btn btn-primary" data-en="Download for Windows" data-es="Descargar para Windows">Download for Windows</a>
+                <a id="appNotesBtn" href="https://github.com/OWNER/REPO/releases" target="_blank" rel="noopener" class="btn btn-secondary" data-en="View Release Notes" data-es="Ver notas de versión">View Release Notes</a>
+            </div>
+
+            <p class="app-note">
+                <span data-en="Draft link format (replace OWNER/REPO before publish):" data-es="Formato de enlace draft (reemplaza OWNER/REPO antes de publicar):">Draft link format (replace OWNER/REPO before publish):</span><br>
+                <span class="app-code">https://github.com/OWNER/REPO/releases/latest/download/NightscapeProcessor_Setup_Windows.exe</span>
+            </p>
         </div>
     </section>
 
@@ -1161,11 +1279,12 @@
                 <a href="#sessions" data-en="Editing Sessions" data-es="Sesiones de Edición">Editing Sessions</a>
                 <a href="#courses" data-en="Courses" data-es="Cursos">Courses</a>
                 <a href="#prints" data-en="Print Shop" data-es="Tienda">Print Shop</a>
+                <a href="#app" data-en="Download App" data-es="Descargar App">Download App</a>
             </div>
             
             <div class="footer-section">
                 <h4 data-en="Contact" data-es="Contacto">Contact</h4>
-                <a href="mailto:Antares@gmail.com">Antares@gmail.com</a>
+                <a href="mailto:astroian2026@gmail.com">astroian2026@gmail.com</a>
                 <div class="social-links">
                     <a href="https://www.instagram.com/astrohoracio?igsh=MXMwZ2FwcGppeWlmMg==" target="_blank" aria-label="Instagram">IG</a>
                     <a href="https://www.tiktok.com/@astrohoracio?_r=1&_t=ZN-93CUirDMcX0" target="_blank" aria-label="Tiktok">TK</a>
