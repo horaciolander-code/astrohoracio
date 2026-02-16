@@ -465,6 +465,43 @@
             border-bottom: none;
         }
 
+        .session-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: var(--spacing-md);
+        }
+
+        .session-tier {
+            background: var(--near-black);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            text-align: left;
+        }
+
+        .session-tier h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .session-tier-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .session-tier ul {
+            list-style: none;
+            margin-bottom: var(--spacing-md);
+            color: var(--light-gray);
+        }
+
+        .session-tier li {
+            padding: 0.3rem 0;
+        }
+
         /* ===== COURSES ===== */
         .courses-grid {
             display: grid;
@@ -1022,15 +1059,31 @@
                 <span data-en="Duration: 1 hour 30 minutes" data-es="Duración: 1 hora 30 minutos">Duration: 1 hour 30 minutes</span>
             </p>
 
-            <ul class="session-features">
-                <li data-en="Standard Session — €69" data-es="Sesión Standard — €69">Standard Session — €69</li>
-                <li data-en="Includes 1-to-1 editing guidance and workflow optimization" data-es="Incluye guía 1-a-1 de edición y optimización de flujo">Includes 1-to-1 editing guidance and workflow optimization</li>
-                <li data-en="Pro Session + App Included — €99" data-es="Sesión Pro + App Incluida — €99">Pro Session + App Included — €99</li>
-                <li data-en="Includes full session + Nightscape Processor Pro access" data-es="Incluye sesión completa + acceso a Nightscape Processor Pro">Includes full session + Nightscape Processor Pro access</li>
-            </ul>
+            <div class="session-tiers">
+                <div class="session-tier">
+                    <h4 data-en="Standard Session" data-es="Sesión Standard">Standard Session</h4>
+                    <div class="session-tier-price">€69</div>
+                    <ul>
+                        <li data-en="- 1-to-1 video session" data-es="- Sesión de video 1-a-1">- 1-to-1 video session</li>
+                        <li data-en="- Editing guidance on your own images" data-es="- Guía de edición sobre tus propias imágenes">- Editing guidance on your own images</li>
+                        <li data-en="- Workflow optimization" data-es="- Optimización de flujo de trabajo">- Workflow optimization</li>
+                    </ul>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Book & Pay with PayPal" data-es="Reservar y Pagar con PayPal">Book & Pay with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name + Standard Session in the payment note" data-es="Añade tu nombre + Standard Session en la nota del pago">Please add your name + Standard Session in the payment note</p>
+                </div>
 
-            <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Book & Pay with PayPal" data-es="Reservar y Pagar con PayPal">Book & Pay with PayPal</a>
-            <p class="payment-note" data-en="Please add your name and selected option in the payment note (Standard €69 or Pro + App €99)" data-es="Por favor añade tu nombre y la opción seleccionada en la nota del pago (Standard €69 o Pro + App €99)">Please add your name and selected option in the payment note (Standard €69 or Pro + App €99)</p>
+                <div class="session-tier">
+                    <h4 data-en="Pro Session + App Included" data-es="Sesión Pro + App Incluida">Pro Session + App Included</h4>
+                    <div class="session-tier-price">€99</div>
+                    <ul>
+                        <li data-en="- Everything in Standard" data-es="- Todo lo de Standard">- Everything in Standard</li>
+                        <li data-en="- Nightscape Processor Pro included" data-es="- Nightscape Processor Pro incluido">- Nightscape Processor Pro included</li>
+                        <li data-en="- DeepSpace + H-alpha blended pro workflow" data-es="- Flujo pro DeepSpace + H-alpha blended">- DeepSpace + H-alpha blended pro workflow</li>
+                    </ul>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Book & Pay with PayPal" data-es="Reservar y Pagar con PayPal">Book & Pay with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name + Pro Session + App in the payment note" data-es="Añade tu nombre + Pro Session + App en la nota del pago">Please add your name + Pro Session + App in the payment note</p>
+                </div>
+            </div>
         </div>
     </section>
 
