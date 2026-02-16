@@ -741,6 +741,42 @@
             margin-bottom: var(--spacing-md);
         }
 
+        .app-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .app-tier {
+            background: var(--near-black);
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .app-tier h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .app-tier ul {
+            list-style: none;
+            margin: 0.8rem 0 1rem;
+            color: var(--light-gray);
+        }
+
+        .app-tier li {
+            padding: 0.25rem 0;
+        }
+
+        .app-tier .tier-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
         .app-note {
             color: var(--light-gray);
             font-size: 0.92rem;
@@ -1241,8 +1277,8 @@
             </div>
 
             <h3 data-en="Nightscape Processor Setup" data-es="Instalador Nightscape Processor">Nightscape Processor Setup</h3>
-            <p class="app-description" data-en="One-click installer for your Astro processing tool. This is a draft block ready for release integration from GitHub Releases." data-es="Instalador de un clic para tu herramienta de procesado Astro. Este es un bloque draft listo para integrar con GitHub Releases.">
-                One-click installer for your Astro processing tool. This is a draft block ready for release integration from GitHub Releases.
+            <p class="app-description" data-en="Choose your version: free app for core workflow, or Pro for advanced DeepSpace editing and H-alpha blended processing." data-es="Elige tu versión: app gratis para flujo base, o Pro para edición DeepSpace avanzada y procesado H-alpha blended.">
+                Choose your version: free app for core workflow, or Pro for advanced DeepSpace editing and H-alpha blended processing.
             </p>
 
             <div class="app-meta">
@@ -1251,8 +1287,34 @@
                 <span class="app-meta-item" data-en="Distribution: GitHub Releases" data-es="Distribución: GitHub Releases">Distribution: GitHub Releases</span>
             </div>
 
+            <div class="app-tiers">
+                <div class="app-tier">
+                    <h4 data-en="Free Version" data-es="Versión Gratis">Free Version</h4>
+                    <p data-en="Ideal to start with Nightscape Processor." data-es="Ideal para empezar con Nightscape Processor.">Ideal to start with Nightscape Processor.</p>
+                    <ul>
+                        <li data-en="- Core workflow tools" data-es="- Herramientas de flujo base">- Core workflow tools</li>
+                        <li data-en="- Standard processing" data-es="- Procesado estándar">- Standard processing</li>
+                        <li data-en="- Basic updates" data-es="- Actualizaciones básicas">- Basic updates</li>
+                    </ul>
+                    <div class="tier-price" data-en="Free" data-es="Gratis">Free</div>
+                    <a id="appDownloadBtn" href="https://github.com/OWNER/REPO/releases/latest/download/NightscapeProcessor_Setup_Windows.exe" target="_blank" rel="noopener" class="btn btn-primary" data-en="Download Free" data-es="Descargar Gratis">Download Free</a>
+                </div>
+
+                <div class="app-tier">
+                    <h4 data-en="Pro Version" data-es="Versión Pro">Pro Version</h4>
+                    <p data-en="For advanced users and premium astro editing." data-es="Para usuarios avanzados y edición astro premium.">For advanced users and premium astro editing.</p>
+                    <ul>
+                        <li data-en="- DeepSpace editing tools" data-es="- Herramientas de edición DeepSpace">- DeepSpace editing tools</li>
+                        <li data-en="- H-alpha blended pro workflow" data-es="- Flujo pro H-alpha blended">- H-alpha blended pro workflow</li>
+                        <li data-en="- Priority support & updates" data-es="- Soporte y actualizaciones prioritarias">- Priority support & updates</li>
+                    </ul>
+                    <div class="tier-price" data-en="€49 (launch)" data-es="€49 (lanzamiento)">€49 (launch)</div>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-secondary" data-en="Buy Pro with PayPal" data-es="Comprar Pro con PayPal">Buy Pro with PayPal</a>
+                    <p class="payment-note" data-en="Please add your name + Nightscape Pro in the payment note" data-es="Añade tu nombre + Nightscape Pro en la nota del pago">Please add your name + Nightscape Pro in the payment note</p>
+                </div>
+            </div>
+
             <div class="app-actions">
-                <a id="appDownloadBtn" href="https://github.com/OWNER/REPO/releases/latest/download/NightscapeProcessor_Setup_Windows.exe" target="_blank" rel="noopener" class="btn btn-primary" data-en="Download for Windows" data-es="Descargar para Windows">Download for Windows</a>
                 <a id="appNotesBtn" href="https://github.com/OWNER/REPO/releases" target="_blank" rel="noopener" class="btn btn-secondary" data-en="View Release Notes" data-es="Ver notas de versión">View Release Notes</a>
             </div>
 
