@@ -271,6 +271,27 @@
             color: var(--black);
         }
 
+        .btn-donate {
+            background: transparent;
+            color: #f0a500;
+            border: 1px solid #f0a500;
+            font-size: 0.82rem;
+            padding: 8px 20px;
+            margin-top: 8px;
+        }
+
+        .btn-donate:hover {
+            background: #f0a500;
+            color: var(--black);
+        }
+
+        .donate-note {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            text-align: center;
+        }
+
         /* ===== SECTIONS ===== */
         .section {
             padding: var(--spacing-xl) var(--spacing-md);
@@ -1380,7 +1401,7 @@
         <div class="app-card">
             <div class="app-header">
                 <span class="app-badge" data-en="Windows Release" data-es="Versión Windows">Windows Release</span>
-                <span class="app-meta-item">v1.6.1 · 33 MB</span>
+                <span class="app-meta-item">v1.7.0 · 145 MB</span>
             </div>
 
             <h3 data-en="Nightscape Processor Setup" data-es="Instalador Nightscape Processor">Nightscape Processor Setup</h3>
@@ -1401,10 +1422,13 @@
                     <ul>
                         <li data-en="- Core workflow tools" data-es="- Herramientas de flujo base">- Core workflow tools</li>
                         <li data-en="- Standard processing" data-es="- Procesado estándar">- Standard processing</li>
-                        <li data-en="- Basic updates" data-es="- Actualizaciones básicas">- Basic updates</li>
+                        <li data-en="- No updates" data-es="- Sin actualizaciones">- No updates</li>
+                        <li data-en="- 10-day trial" data-es="- 10 días de prueba">- 10-day trial</li>
                     </ul>
                     <div class="tier-price" data-en="Free" data-es="Gratis">Free</div>
                     <a id="appDownloadBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener" class="btn btn-primary" data-en="Download Free" data-es="Descargar Gratis">Download Free</a>
+                    <a href="https://paypal.me/astrohoracio" target="_blank" rel="noopener" class="btn btn-donate" data-en="☕ Support the project" data-es="☕ Apoya el proyecto">☕ Support the project</a>
+                    <p class="donate-note" data-en="If this app helped you, a small donation keeps the project alive ❤️" data-es="Si la app te ha sido útil, una pequeña donación mantiene el proyecto vivo ❤️">If this app helped you, a small donation keeps the project alive ❤️</p>
                 </div>
 
                 <div class="app-tier">
@@ -1415,7 +1439,7 @@
                         <li data-en="- H-alpha blended pro workflow" data-es="- Flujo pro H-alpha blended">- H-alpha blended pro workflow</li>
                         <li data-en="- Priority support & updates" data-es="- Soporte y actualizaciones prioritarias">- Priority support & updates</li>
                     </ul>
-                    <div class="tier-price" data-en="€49 (launch)" data-es="€49 (lanzamiento)">€49 (launch)</div>
+                    <div class="tier-price" data-en="€49 <small style='font-size:0.65em;opacity:0.7'>(after launch: €79)</small>" data-es="€49 <small style='font-size:0.65em;opacity:0.7'>(precio tras lanzamiento: €79)</small>">€49 <small style="font-size:0.65em;opacity:0.7">(after launch: €79)</small></div>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
                     <p class="payment-note" data-en="Please add your name and selected option in the payment note" data-es="Por favor añade tu nombre y la opción seleccionada en la nota del pago">Please add your name and selected option in the payment note</p>
                 </div>
