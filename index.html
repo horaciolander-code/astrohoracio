@@ -1061,6 +1061,23 @@
             -webkit-user-select: none;
         }
     </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1471847414557292');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1471847414557292&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -1297,7 +1314,7 @@
                         <li data-en="- 10-day trial" data-es="- 10 días de prueba">- 10-day trial</li>
                     </ul>
                     <div class="tier-price" data-en="Free" data-es="Gratis">Free</div>
-                    <a id="appDownloadBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener" class="btn btn-primary" data-en="Download Free" data-es="Descargar Gratis">Download Free</a>
+                    <a id="appDownloadBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener" class="btn btn-primary" onclick="fbq('track', 'Lead')" data-en="Download Free" data-es="Descargar Gratis">Download Free</a>
                     <a href="https://paypal.me/astrohoracio" target="_blank" rel="noopener" class="btn btn-donate" data-en="☕ Support the project" data-es="☕ Apoya el proyecto">☕ Support the project</a>
                     <p class="donate-note" data-en="If this app helped you, a small donation keeps the project alive ❤️" data-es="Si la app te ha sido útil, una pequeña donación mantiene el proyecto vivo ❤️">If this app helped you, a small donation keeps the project alive ❤️</p>
                 </div>
