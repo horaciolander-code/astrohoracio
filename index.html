@@ -910,68 +910,6 @@
             margin-bottom: 0.8rem;
         }
 
-        .launch-countdown {
-            background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(255,107,53,0.05));
-            border: 1px solid rgba(255,107,53,0.3);
-            border-radius: 8px;
-            padding: 0.6rem 0.8rem;
-            margin: -0.4rem 0 0.8rem;
-            text-align: center;
-        }
-
-        .launch-countdown .countdown-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent);
-            margin-bottom: 0.3rem;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: 'Space Mono', monospace;
-        }
-
-        .countdown-timer .time-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .countdown-timer .time-value {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--white);
-            background: rgba(255,255,255,0.08);
-            border-radius: 4px;
-            padding: 0.15rem 0.4rem;
-            min-width: 2.2rem;
-        }
-
-        .countdown-timer .time-label {
-            font-size: 0.55rem;
-            color: var(--light-gray);
-            margin-top: 0.15rem;
-            text-transform: uppercase;
-        }
-
-        .countdown-timer .time-sep {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
-            align-self: flex-start;
-            padding-top: 0.15rem;
-        }
-
-        .launch-expired {
-            font-size: 0.75rem;
-            color: var(--light-gray);
-            opacity: 0.6;
-            margin-top: -0.4rem;
-            margin-bottom: 0.5rem;
-        }
 
         .app-note {
             color: var(--light-gray);
@@ -1390,17 +1328,7 @@
                         <li data-en="- H-alpha blended pro workflow" data-es="- Flujo pro H-alpha blended">- H-alpha blended pro workflow</li>
                         <li data-en="- Priority support & updates" data-es="- Soporte y actualizaciones prioritarias">- Priority support & updates</li>
                     </ul>
-                    <div class="tier-price" id="pro-price">€49</div>
-                    <div class="launch-countdown" id="launch-countdown">
-                        <div class="countdown-label" data-en="Launch price ends in" data-es="Precio de lanzamiento termina en"></div>
-                        <div class="countdown-timer">
-                            <div class="time-unit"><span class="time-value" id="cd-hours">48</span><span class="time-label" data-en="hrs" data-es="hrs"></span></div>
-                            <span class="time-sep">:</span>
-                            <div class="time-unit"><span class="time-value" id="cd-mins">00</span><span class="time-label" data-en="min" data-es="min"></span></div>
-                            <span class="time-sep">:</span>
-                            <div class="time-unit"><span class="time-value" id="cd-secs">00</span><span class="time-label" data-en="sec" data-es="sec"></span></div>
-                        </div>
-                    </div>
+                    <div class="tier-price">€79</div>
                     <a href="https://paypal.me/astrohoracio" target="_blank" class="btn btn-primary" data-en="Buy with PayPal" data-es="Comprar con PayPal">Buy with PayPal</a>
                     <p class="payment-note" data-en="Please add your name and selected option in the payment note" data-es="Por favor añade tu nombre y la opción seleccionada en la nota del pago">Please add your name and selected option in the payment note</p>
                 </div>
@@ -1804,62 +1732,6 @@
             }, 100);
         }
 
-        // ===== LAUNCH COUNTDOWN TIMER =====
-        (function() {
-            var COUNTDOWN_KEY = 'launchCountdownEnd_v2';
-            var LAUNCH_PRICE = '€49';
-            var FINAL_PRICE = '€79';
-            var HOURS = 12;
-
-            var stored = localStorage.getItem(COUNTDOWN_KEY);
-            var endTime;
-            if (stored) {
-                endTime = parseInt(stored, 10);
-            } else {
-                endTime = Date.now() + HOURS * 60 * 60 * 1000;
-                localStorage.setItem(COUNTDOWN_KEY, endTime);
-            }
-
-            var priceEl = document.getElementById('pro-price');
-            var countdownEl = document.getElementById('launch-countdown');
-            var hoursEl = document.getElementById('cd-hours');
-            var minsEl = document.getElementById('cd-mins');
-            var secsEl = document.getElementById('cd-secs');
-
-            function pad(n) { return n < 10 ? '0' + n : n; }
-
-            function showExpired() {
-                priceEl.textContent = FINAL_PRICE;
-                countdownEl.style.display = 'none';
-            }
-
-            function tick() {
-                var now = Date.now();
-                var diff = endTime - now;
-                if (diff <= 0) {
-                    showExpired();
-                    return;
-                }
-                var totalSecs = Math.floor(diff / 1000);
-                var h = Math.floor(totalSecs / 3600);
-                var m = Math.floor((totalSecs % 3600) / 60);
-                var s = totalSecs % 60;
-                hoursEl.textContent = pad(h);
-                minsEl.textContent = pad(m);
-                secsEl.textContent = pad(s);
-                requestAnimationFrame(function() {
-                    setTimeout(tick, 1000);
-                });
-            }
-
-            // Initialize labels based on current language
-            var cdLabel = countdownEl.querySelector('.countdown-label');
-            if (cdLabel) {
-                cdLabel.textContent = cdLabel.getAttribute('data-' + currentLang) || cdLabel.textContent;
-            }
-
-            tick();
-        })();
     </script>
 </body>
 </html>
