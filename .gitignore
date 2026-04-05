@@ -1,0 +1,9 @@
+.vercel
+.env*.local
+_originals/
+optimize_images.py
+copy_carrusel_nightscape_lanzamiento.md
+*.jpg
+*.jpeg
+*.png
+!*.webp
