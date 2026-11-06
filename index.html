@@ -14,6 +14,7 @@
 @font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url('Assets/fonts/HankenGrotesk.woff2') format('woff2')}
 @font-face{font-family:'Newsreader';font-style:italic;font-weight:200 800;font-display:swap;src:url('Assets/fonts/Newsreader-italic.woff2') format('woff2')}
 @font-face{font-family:'Newsreader';font-style:normal;font-weight:200 800;font-display:swap;src:url('Assets/fonts/Newsreader.woff2') format('woff2')}
+
 :root{
   --ink:#0c0a09; --ink-2:#14110f; --ink-3:#1e1a17; --line:#2e2824;
   --paper:#efe9dd; --muted:#a59c8e; --dim:#7b7267;
@@ -56,8 +57,8 @@ h2 em{font-style:italic;font-weight:300}
 /* Portada */
 .hero{position:relative;padding-top:64px;isolation:isolate}
 .hero-photo{position:absolute;inset:0 0 34% 0;z-index:-1;overflow:hidden}
-.hero-photo img{width:128%;max-width:none;height:100%;object-fit:cover;object-position:50% 40%;animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both;transform-origin:30% 50%}
-.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ink-rgb),.34) 0%,rgba(var(--ink-rgb),.04) 40%,rgba(var(--ink-rgb),.25) 70%,var(--ink) 100%),linear-gradient(90deg,rgba(var(--ink-rgb),.8) 0%,rgba(var(--ink-rgb),.5) 34%,rgba(var(--ink-rgb),0) 58%)}
+.hero-photo img{width:118%;max-width:none;height:100%;object-fit:cover;object-position:50% 0%;animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both;transform-origin:30% 50%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ink-rgb),.3) 0%,rgba(var(--ink-rgb),0) 35%,rgba(var(--ink-rgb),.1) 70%,var(--ink) 100%),linear-gradient(90deg,rgba(var(--ink-rgb),.72) 0%,rgba(var(--ink-rgb),.35) 32%,rgba(var(--ink-rgb),0) 52%)}
 .hero-top{padding-top:clamp(3.2rem,8vw,6.8rem);padding-bottom:clamp(2.4rem,5vw,3.6rem)}
 .hero h1{font-size:clamp(3rem,8.3vw,7.6rem);line-height:.96;max-width:12.5ch;margin:1rem 0 1.5rem}
 .hero h1 em{font-weight:300}
@@ -249,6 +250,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
 .soon p:not(.label){color:var(--muted);margin-bottom:1.4rem}
 .hero-photo img{position:absolute;top:-10%;left:0;height:112%}
 @media (max-width:720px){
+  .hero-photo img{width:100%;object-position:50% 12%}
   #demo[data-mode="landscape"]{aspect-ratio:1217/664}
   #demo[data-mode="landscape"] .shot-inner{width:162.69%;margin-left:-59.74%;margin-top:-38.45%}
   #demo[data-mode="deepspace"]{aspect-ratio:696/664}
@@ -294,7 +296,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
 
 <main id="top">
 <div class="hero">
-    <div class="hero-photo"><img src="Assets/photos/hero-lavanda.webp" alt="" fetchpriority="high" oncontextmenu="return false;"></div>
+    <div class="hero-photo"><picture><source media="(max-width:720px)" srcset="Assets/photos/hero-vertical.webp"><img src="Assets/photos/hero-arco.webp" alt="" fetchpriority="high" oncontextmenu="return false;"></picture></div>
     <div class="wrap">
         <div class="hero-top">
             <p class="label fade"><b>Nightscape Processor 2.1</b> · Windows · Mac <span data-en="coming soon" data-es="próximamente">próximamente</span></p>
@@ -312,11 +314,11 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
                 <button type="button" class="mode-hot hot-l" data-mode-btn="landscape" aria-label="Ver modo Landscape"></button>
                 <button type="button" class="mode-hot hot-d" data-mode-btn="deepspace" aria-label="Ver modo Deep Space"></button>
                 <div class="ba" id="ba" role="slider" tabindex="0" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-                    <img class="m-l" src="Assets/app/cisne-antes.webp" alt="Región del Cisne, imagen original con el contraste reducido" draggable="false" oncontextmenu="return false;">
+                    <img class="m-l" src="Assets/app/cisne-antes.webp" alt="Región del Cisne, una toma RAW sin procesar" draggable="false" oncontextmenu="return false;">
                     <img class="ba-after m-l" src="Assets/app/cisne-despues.webp" alt="Región del Cisne, procesada con Nightscape Processor" draggable="false" oncontextmenu="return false;">
                     <img class="m-d" src="Assets/app/laguna-antes.webp" alt="Nebulosa de la Laguna, apilado original" draggable="false" oncontextmenu="return false;">
                     <img class="ba-after m-d" src="Assets/app/laguna-despues.webp" alt="Nebulosa de la Laguna, procesada con Nightscape Processor" draggable="false" oncontextmenu="return false;">
-                    <span class="ba-tag ba-tag-l m-l" data-en="Before" data-es="Antes">Antes</span>
+                    <span class="ba-tag ba-tag-l m-l">RAW</span>
                     <span class="ba-tag ba-tag-l m-d" data-en="Stacked" data-es="Apilado">Apilado</span>
                     <span class="ba-tag ba-tag-r" data-en="With Nightscape" data-es="Con Nightscape">Con Nightscape</span>
                     <div class="ba-line"><span class="ba-grip" aria-hidden="true">‹ ›</span></div>
@@ -329,7 +331,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
                 <button type="button" data-mode-btn="deepspace" aria-pressed="false">Deep Space</button>
             </div>
             <b data-en="Drag to compare" data-es="Arrastra para comparar">Arrastra para comparar</b>
-            <span class="m-l" data-en="Cygnus region at 50 mm. Before: the original image with reduced contrast, to recreate the look of an unprocessed stack. After: processed with Nightscape Processor." data-es="Región del Cisne a 50 mm. Antes: la imagen original con el contraste reducido, para recrear el aspecto de un apilado sin procesar. Después: procesada con Nightscape Processor.">Región del Cisne a 50 mm. Antes: la imagen original con el contraste reducido, para recrear el aspecto de un apilado sin procesar. Después: procesada con Nightscape Processor.</span>
+            <span class="m-l" data-en="Cygnus region at 50 mm. RAW: a single unprocessed exposure from the session. After: the final image processed with Nightscape Processor." data-es="Región del Cisne a 50 mm. RAW: una sola toma de la sesión, sin procesar. Después: la imagen final procesada con Nightscape Processor.">Región del Cisne a 50 mm. RAW: una sola toma de la sesión, sin procesar. Después: la imagen final procesada con Nightscape Processor.</span>
             <span class="m-d" data-en="Lagoon Nebula. Stacked: the original stack with the preview auto-stretch. After: processed with Nightscape Processor." data-es="Nebulosa de la Laguna. Apilado: el apilado original con el auto-estirado de la vista previa. Después: procesada con Nightscape Processor.">Nebulosa de la Laguna. Apilado: el apilado original con el auto-estirado de la vista previa. Después: procesada con Nightscape Processor.</span>
         </div>
     </div>
