@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nightscape Processor | App de astrofotografía de AstroHoracio</title>
-    <meta name="description" content="Nightscape Processor: del apilado a la imagen final en un flujo guiado. Paisaje nocturno y cielo profundo para Windows, y pronto para Mac. Prueba gratis 10 días.">
+    <meta name="description" content="Nightscape Processor: del apilado a la imagen final en un flujo guiado. Paisaje nocturno y cielo profundo para Windows y Mac. Prueba gratis 10 días. Black Friday: Pro a 49 €.">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -216,6 +216,65 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
   .rv{opacity:1;transform:none}
 }
 
+/* ===== Black Friday ===== */
+:root{--bar:38px}
+:root.bf-over{--bar:0px}
+.bf-over .bf-only{display:none!important}
+.no-bf{display:none}
+.bf-over .no-bf{display:inline}
+html{scroll-padding-top:calc(76px + var(--bar))}
+.nav{top:var(--bar)}
+.hero{padding-top:calc(64px + var(--bar))}
+.bf-bar{position:fixed;inset:0 0 auto 0;height:var(--bar);z-index:45;display:flex;align-items:center;overflow:hidden;background:var(--ha);color:var(--on-accent);text-decoration:none;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.bf-track{display:flex;gap:3.5rem;white-space:nowrap;padding-left:3.5rem;animation:marquee 40s linear infinite}
+.bf-track b{font-weight:700}.bf-track s{opacity:.6}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.bf{background:var(--ha);color:var(--on-accent);padding:0 0 clamp(3rem,7vw,5.5rem);overflow:hidden;position:relative}
+.bf::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(rgba(0,0,0,.6) 1px,transparent 1.2px);background-size:6px 6px}
+.bf-marquee{border-bottom:2px solid var(--on-accent);padding:.4rem 0;overflow:hidden}
+.bf-run{display:flex;width:max-content;animation:marquee 26s linear infinite}
+.bf-run span,.bf-run em{font-family:var(--serif);font-size:clamp(4rem,13vw,11.5rem);line-height:1;letter-spacing:-.03em;padding-right:.35em;white-space:nowrap}
+.bf-run span{font-weight:700}
+.bf-run em{font-weight:300;color:transparent;-webkit-text-stroke:2px var(--on-accent)}
+.bf-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:2.5rem 4rem;align-items:end;padding-top:clamp(2.2rem,5vw,3.5rem)}
+.bf .label{color:var(--on-accent);font-weight:600}
+.bf h2{font-size:clamp(2.4rem,5vw,4.4rem);margin:.6rem 0 1rem}
+.bf h2 em{font-weight:300}
+.bf-price{display:flex;align-items:center;flex-wrap:wrap;gap:.2rem 1.2rem}
+.bf-price s{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);opacity:.55;text-decoration-thickness:3px}
+.bf-price strong{font-family:var(--serif);font-weight:700;font-size:clamp(5rem,12vw,9.5rem);line-height:.9;letter-spacing:-.04em}
+.bf-off{display:inline-block;background:var(--ink);color:var(--ha);font-family:var(--mono);font-weight:500;font-size:clamp(1.1rem,2.2vw,1.6rem);padding:.35em .6em;transform:rotate(-6deg);animation:wobble 2.6s ease-in-out infinite}
+@keyframes wobble{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(-3deg) scale(1.08)}}
+.bf-copy{margin-top:1rem;max-width:46ch;font-size:1.06rem}
+.bf-side{display:flex;flex-direction:column;gap:1rem}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}
+.cd div{background:var(--ink);color:var(--paper);padding:.8rem .4rem;text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.cd b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--ha);letter-spacing:0;margin-bottom:.3rem}
+.bf-btn{background:var(--ink);color:var(--ha);border-color:var(--ink);font-size:1.1rem;padding:1.05em 1.4em}
+.bf-btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.bf-note{font-size:.86rem;opacity:.85}
+.price s.old{font-size:.55em;opacity:.5;margin-right:.15em}
+.bf-tag{display:inline-block;background:var(--ha);color:var(--on-accent);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.3em .6em;margin-top:-.4rem}
+.hero .btn-line s{opacity:.6}
+.mac-btns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.6rem;width:100%}
+.mac-btns .btn{width:100%}
+/* ===== Cookies ===== */
+.ck{position:fixed;left:16px;bottom:16px;z-index:70;width:min(520px,calc(100vw - 32px));background:var(--ink-2);border:1px solid var(--line);padding:1.3rem 1.4rem;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.ck[hidden]{display:none}
+.ck p:not(.label){margin:.5rem 0 1rem;color:var(--muted);font-size:.95rem}
+.ck-btns{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.ck-btns .btn{width:100%}
+.ck-more{display:inline-block;margin-top:.8rem;font-size:.86rem;color:var(--muted)}
+.ck-open{font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.copy a{color:inherit}
+@media (max-width:720px){
+  .bf-grid{grid-template-columns:minmax(0,1fr)}
+  .bf-track{font-size:.66rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .bf-track,.bf-run,.bf-off{animation:none!important}
+}
+
 /* Deslizador antes/después, encajado en la vista previa de la captura (1980x1302) */
 .hero-shot{overflow:hidden}
 .shot-inner{position:relative}
@@ -259,26 +318,49 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
 :root[data-p="grafito"]{--ink:#0b0c0e;--ink-2:#131417;--ink-3:#1c1e22;--line:#2b2e33;--paper:#f3f2ee;--muted:#a7a9ad;--dim:#8b8f95;--ha:#f0b13c;--ha-soft:#f5c15d;--on-accent:#14110a;--l-muted:#55585e;--l-line:#cfd0cd;--l-accent:#8a5c00;--on-l:#ffffff;--ink-rgb:11,12,14;--paper-rgb:243,242,238}
 
 
+.pro-cta{position:relative;display:inline-flex}
+:root:not(.bf-over) .hero-pro{background:var(--ha);border-color:var(--ha);color:var(--on-accent);box-shadow:0 0 0 0 rgba(240,177,60,.55);animation:glow 2.4s ease-out infinite}
+:root:not(.bf-over) .hero-pro:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+:root:not(.bf-over) .hero-pro s{opacity:.55}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(240,177,60,.55)}70%,100%{box-shadow:0 0 0 18px rgba(240,177,60,0)}}
+.sticker{position:absolute;top:-58px;right:-96px;width:88px;height:88px;border-radius:50%;background:var(--ink);color:var(--ha);border:2px dashed var(--ha);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transform:rotate(14deg);box-shadow:0 10px 30px rgba(0,0,0,.55);animation:stick 2.6s ease-in-out infinite;pointer-events:none}
+.sticker small{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase}
+.sticker b{font-family:var(--serif);font-weight:700;font-size:1.65rem;letter-spacing:-.02em;margin-top:.15rem}
+@keyframes stick{0%,100%{transform:rotate(14deg) scale(1)}50%{transform:rotate(8deg) scale(1.08)}}
+.hero-cd{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:.55em .9em;background:rgba(var(--ink-rgb),.6);border:1px solid rgba(240,177,60,.45);font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--paper)}
+.hero-cd b{color:var(--ha);font-weight:500}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ha);animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+@media (max-width:720px){.sticker{width:70px;height:70px;top:-8px;right:-82px}.sticker b{font-size:1.4rem}.hero-cd{font-size:.66rem}}
+@media (max-width:390px){.pro-cta{align-items:center;gap:.55rem}.sticker{position:static;flex:none;width:58px;height:58px}.sticker small{font-size:.5rem}.sticker b{font-size:1.15rem}.hero-pro{padding-left:1em;padding-right:1em}}
+@media (prefers-reduced-motion:reduce){.hero-pro,.sticker,.dot{animation:none!important}}
+
+.beta.new{background:var(--ha);color:var(--on-accent);border-color:var(--ha);font-weight:600}
+.new-chip{display:inline-block;margin-left:.35em;padding:.15em .5em;background:var(--ha);color:var(--on-accent);font-weight:600;letter-spacing:.08em;animation:blink 1.6s ease-in-out infinite}
+.mac-new{display:block;margin-top:.15rem}
+@media (prefers-reduced-motion:reduce){.new-chip{animation:none!important}}
+
     </style>
-    <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1471847414557292');
-    fbq('track', 'PageView');
+    document.documentElement.classList.toggle('bf-over', Date.now() > new Date('2026-11-30T23:59:59+01:00').getTime());
+    window.npTrack = function (ev) { if (window.fbq) window.fbq('track', ev); };
+    (function () {
+        /* El Meta Pixel solo se carga si la persona acepta las cookies */
+        function load() {
+            if (window.fbq) return;
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            window.fbq('init', '1471847414557292');
+            window.fbq('track', 'PageView');
+        }
+        window.npLoadPixel = load;
+        var c = null;
+        try { c = localStorage.getItem('np-consent'); } catch (e) {}
+        if (c === 'granted') load();
+    })();
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1471847414557292&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
 <body>
+<a class="bf-bar bf-only" href="#blackfriday" aria-label="Black Friday"><div class="bf-track" aria-hidden="true"><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span><span><b>Black Friday</b> · Nightscape Processor Pro <s>79 €</s> <b>49 €</b> · −38%</span></div></a>
 <header class="nav">
     <div class="wrap">
         <a class="logo" href="#top">AstroHoracio</a>
@@ -299,13 +381,14 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
     <div class="hero-photo"><picture><source media="(max-width:720px)" srcset="Assets/photos/hero-vertical.webp"><img src="Assets/photos/hero-arco.webp" alt="" fetchpriority="high" oncontextmenu="return false;"></picture></div>
     <div class="wrap">
         <div class="hero-top">
-            <p class="label fade"><b>Nightscape Processor 2.1</b> · Windows · Mac <span data-en="coming soon" data-es="próximamente">próximamente</span></p>
+            <p class="label fade"><b>Nightscape Processor 2.1</b> · Windows · Mac <span class="new-chip" data-en="New" data-es="Novedad">Novedad</span></p>
             <h1 class="fade" style="animation-delay:.05s" data-en="From stack to final image." data-es="Del apilado a la imagen final.">Del apilado a la imagen final.</h1>
             <p class="sub fade" style="animation-delay:.1s" data-en="A guided workflow for night landscape and deep sky, built by an astrophotographer. It brings Siril, StarNet, GraXpert and VeraLux together so you stop repeating the same steps by hand." data-es="Un flujo guiado para paisaje nocturno y cielo profundo, creado por un astrofotógrafo. Reúne Siril, StarNet, GraXpert y VeraLux para que dejes de repetir los mismos pasos a mano.">Un flujo guiado para paisaje nocturno y cielo profundo, creado por un astrofotógrafo. Reúne Siril, StarNet, GraXpert y VeraLux para que dejes de repetir los mismos pasos a mano.</p>
             <div class="cta fade" style="animation-delay:.15s">
                 <a class="btn btn-main" href="#descarga" data-en="Try it free for 10 days" data-es="Pruébala gratis 10 días">Pruébala gratis 10 días</a>
-                <a class="btn btn-line" href="#pro" data-en="Get Pro · €79" data-es="Comprar Pro · 79 €">Comprar Pro · 79 €</a>
+                <span class="pro-cta"><a class="btn btn-line hero-pro" href="#blackfriday" onclick="npTrack('ViewContent')"><span data-en="Get Pro" data-es="Comprar Pro">Comprar Pro</span>&nbsp;·&nbsp;<s class="bf-only">79 €</s>&nbsp;<b class="bf-only">49 €</b><span class="no-bf">79 €</span></a><span class="sticker bf-only" aria-hidden="true"><small>Black</small><small>Friday</small><b>−38%</b></span></span>
             </div>
+            <p class="hero-cd bf-only"><span class="dot"></span><span data-en="Black Friday offer ends in" data-es="La oferta de Black Friday termina en">La oferta de Black Friday termina en</span> <b id="heroCd">—</b></p>
         </div>
         <figure class="hero-shot" id="demo" data-mode="landscape">
             <div class="shot-inner">
@@ -373,6 +456,29 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
     </div>
 </section>
 
+
+<section class="bf bf-only" id="blackfriday">
+    <div class="bf-marquee" aria-hidden="true"><div class="bf-run"><span>Black Friday</span><em>Black Friday</em><span>Black Friday</span><em>Black Friday</em><span>Black Friday</span><em>Black Friday</em><span>Black Friday</span><em>Black Friday</em><span>Black Friday</span><em>Black Friday</em><span>Black Friday</span><em>Black Friday</em></div></div>
+    <div class="wrap bf-grid">
+        <div>
+            <p class="label bf-when" data-en="Until 30 November" data-es="Hasta el 30 de noviembre">Hasta el 30 de noviembre</p>
+            <h2>Nightscape Processor <em>Pro</em></h2>
+            <div class="bf-price"><s>79 €</s><strong>49 €</strong><span class="bf-off">−38%</span></div>
+            <p class="bf-copy" data-en="Every mode, no 10-day limit and priority updates. The lowest price it has ever had." data-es="Todos los modos, sin límite de 10 días y actualizaciones prioritarias. El precio más bajo que ha tenido nunca.">Todos los modos, sin límite de 10 días y actualizaciones prioritarias. El precio más bajo que ha tenido nunca.</p>
+        </div>
+        <div class="bf-side">
+            <div class="cd" id="bfCountdown" aria-live="off">
+                <div><b data-cd="d">00</b><span data-en="days" data-es="días">días</span></div>
+                <div><b data-cd="h">00</b><span data-en="hours" data-es="horas">horas</span></div>
+                <div><b data-cd="m">00</b><span data-en="min" data-es="min">min</span></div>
+                <div><b data-cd="s">00</b><span data-en="sec" data-es="seg">seg</span></div>
+            </div>
+            <a class="btn bf-btn" href="https://paypal.me/astrohoracio" target="_blank" rel="noopener noreferrer" onclick="npTrack('InitiateCheckout')"><span data-en="Get Pro for 49 €" data-es="Comprar Pro por 49 €">Comprar Pro por 49 €</span></a>
+            <p class="bf-note" data-en="Add your name and &quot;Black Friday&quot; in the payment note." data-es="Añade en la nota del pago tu nombre y &quot;Black Friday&quot;.">Añade en la nota del pago tu nombre y "Black Friday".</p>
+        </div>
+    </div>
+</section>
+
 <section id="descarga">
     <div class="wrap">
         <div class="head rv">
@@ -395,11 +501,12 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
             </div>
             <div class="plan" id="pro">
                 <h3 data-en="Pro" data-es="Pro">Pro</h3>
-                <div class="price" data-en="€79" data-es="79 €">79 €</div>
+                <div class="price"><s class="old bf-only">79 €</s> <span class="bf-only">49 €</span><span class="no-bf">79 €</span></div>
+                <span class="bf-tag bf-only">Black Friday −38%</span>
                 <ul>
                     <li data-en="Landscape, Deep Space, Hα Blend, Stacking, Panorama and Star Glow" data-es="Landscape, Deep Space, Hα Blend, Apilado, Panorámica y Star Glow">Landscape, Deep Space, Hα Blend, Apilado, Panorámica y Star Glow</li>
                     <li data-en="No 10-day limit" data-es="Sin el límite de 10 días">Sin el límite de 10 días</li>
-                    <li data-en="For Windows. Mac coming soon" data-es="Para Windows. Mac, próximamente">Para Windows. Mac, próximamente</li>
+                    <li data-en="For Windows and Mac (Apple Silicon and Intel)" data-es="Para Windows y Mac (Apple Silicon e Intel)">Para Windows y Mac (Apple Silicon e Intel)</li>
                     <li data-en="Priority support and updates" data-es="Soporte y actualizaciones prioritarias">Soporte y actualizaciones prioritarias</li>
                 </ul>
                 <a class="btn btn-main" href="https://paypal.me/astrohoracio" target="_blank" rel="noopener noreferrer" data-en="Buy with PayPal" data-es="Comprar con PayPal">Comprar con PayPal</a>
@@ -411,7 +518,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
         <div class="oses rv">
             <div class="os">
                 <div class="os-head"><h3>Windows</h3><span class="label">v2.1 · 155 MB · Windows 10/11</span></div>
-                <a id="appDownloadBtn" class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Lead')" data-en="Download for Windows" data-es="Descargar para Windows">Descargar para Windows</a>
+                <a id="appDownloadBtn" class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" onclick="npTrack('Lead')" data-en="Download for Windows" data-es="Descargar para Windows">Descargar para Windows</a>
                 <ol>
                     <li data-en="Run the .exe installer as Administrator" data-es="Ejecuta el instalador .exe como Administrador">Ejecuta el instalador .exe como Administrador</li>
                     <li data-en="Keep the default options and finish setup" data-es="Mantén las opciones por defecto y completa la instalación">Mantén las opciones por defecto y completa la instalación</li>
@@ -421,9 +528,18 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
                 <a id="appNotesBtn" class="txt" href="https://youtu.be/PqhVFcF4az4" target="_blank" rel="noopener noreferrer" data-en="Watch the installation guide" data-es="Ver la guía de instalación">Ver la guía de instalación</a>
             </div>
             <div class="os">
-                <div class="os-head"><h3>Mac<span class="beta" data-en="Coming soon" data-es="Próximamente">Próximamente</span></h3><span class="label">Apple Silicon (M1+)</span></div>
-                <button type="button" id="appDownloadMacBtn" class="btn btn-line" data-en="Download for Mac" data-es="Descargar para Mac">Descargar para Mac</button>
-                <p class="note" data-en="We are putting the finishing touches to the Mac version." data-es="Estamos ultimando la versión para Mac.">Estamos ultimando la versión para Mac.</p>
+                <div class="os-head"><h3>Mac<span class="beta new" data-en="New" data-es="Novedad">Novedad</span></h3><span class="label">v2.1 · Apple Silicon · Intel</span></div>
+                <div class="mac-btns">
+                    <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" onclick="npTrack('Lead')">Apple Silicon (M1+)</a>
+                    <a class="btn btn-line" href="https://docs.google.com/forms/d/e/1FAIpQLSfeRYGWlE6nEtsjLbbIZpr5Xb8NHOk1A9Z7sBiw8WW67lvYnQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" onclick="npTrack('Lead')">Intel</a>
+                </div>
+                <p class="note" data-en="Not sure? Apple menu &gt; About This Mac: if it says M1, M2, M3 or M4, choose Apple Silicon." data-es="¿No sabes cuál? Menú Apple &gt; Acerca de este Mac: si pone M1, M2, M3 o M4, elige Apple Silicon.">¿No sabes cuál? Menú Apple &gt; Acerca de este Mac: si pone M1, M2, M3 o M4, elige Apple Silicon.</p>
+                <ol>
+                    <li data-en="Drag Nightscape Processor to Applications" data-es="Arrastra Nightscape Processor a Aplicaciones">Arrastra Nightscape Processor a Aplicaciones</li>
+                    <li data-en="Install Siril (free) from siril.org" data-es="Instala Siril (gratis) desde siril.org">Instala Siril (gratis) desde siril.org</li>
+                    <li data-en="Open the app once and accept the warning" data-es="Abre la app una vez y acepta el aviso">Abre la app una vez y acepta el aviso</li>
+                    <li data-en="In System Settings &gt; Privacy &amp; Security, click Open Anyway" data-es="En Ajustes del Sistema &gt; Privacidad y seguridad, pulsa Abrir igualmente">En Ajustes del Sistema &gt; Privacidad y seguridad, pulsa Abrir igualmente</li>
+                </ol>
             </div>
         </div>
     </div>
@@ -620,14 +736,25 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
                 <a href="https://www.youtube.com/@Astrohoracio" target="_blank" rel="noopener noreferrer">YouTube</a>
             </div>
         </div>
-        <p class="copy">&copy; 2026 AstroHoracio. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">Todos los derechos reservados.</span></p>
+        <p class="copy">&copy; 2026 AstroHoracio. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">Todos los derechos reservados.</span> · <a href="cookies.html" data-en="Cookie policy" data-es="Política de cookies">Política de cookies</a> · <button type="button" class="ck-open" data-en="Cookie settings" data-es="Configurar cookies">Configurar cookies</button></p>
     </div>
 </footer>
+
+
+<div class="ck" id="ck" role="dialog" aria-labelledby="ckTitle" hidden>
+    <p class="label" id="ckTitle">Cookies</p>
+    <p data-en="We use Meta (Facebook) cookies to measure visits and our campaigns. They only switch on if you accept them." data-es="Usamos cookies de Meta (Facebook) para medir las visitas y nuestras campañas. Solo se activan si las aceptas.">Usamos cookies de Meta (Facebook) para medir las visitas y nuestras campañas. Solo se activan si las aceptas.</p>
+    <div class="ck-btns">
+        <button type="button" class="btn btn-line" id="ckNo" data-en="Reject" data-es="Rechazar">Rechazar</button>
+        <button type="button" class="btn btn-line" id="ckYes" data-en="Accept" data-es="Aceptar">Aceptar</button>
+    </div>
+    <a class="ck-more" href="cookies.html" data-en="Cookie policy" data-es="Política de cookies">Política de cookies</a>
+</div>
 
 <dialog class="soon" id="macDlg" aria-labelledby="macDlgTitle">
     <p class="label"><b>Mac</b></p>
     <h3 id="macDlgTitle" data-en="Coming soon" data-es="Próximamente">Próximamente</h3>
-    <p data-en="The Mac version will be available soon. For now you can download the free trial for Windows." data-es="La versión para Mac estará disponible próximamente. Por ahora puedes descargar la prueba gratis para Windows.">La versión para Mac estará disponible próximamente. Por ahora puedes descargar la prueba gratis para Windows.</p>
+    <p data-en="Both Mac versions, Apple Silicon and Intel, will be available soon. For now you can download the free trial for Windows." data-es="Las dos versiones para Mac, Apple Silicon e Intel, estarán disponibles muy pronto. Por ahora puedes descargar la prueba gratis para Windows.">Las dos versiones para Mac, Apple Silicon e Intel, estarán disponibles muy pronto. Por ahora puedes descargar la prueba gratis para Windows.</p>
     <button type="button" class="btn btn-main" id="macDlgClose" data-en="Got it" data-es="Entendido">Entendido</button>
 </dialog>
 
@@ -703,9 +830,39 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.92rem;col
         var step = { ArrowLeft: -3, ArrowDown: -3, ArrowRight: 3, ArrowUp: 3, Home: -100, End: 100 }[e.key];
         if (step) { e.preventDefault(); touched(); setPos(now + step); }
     });
+    /* Cookies */
+    var ck = document.getElementById('ck');
+    var stored = null;
+    try { stored = localStorage.getItem('np-consent'); } catch (e) {}
+    function decide(v) {
+        var before = stored;
+        try { localStorage.setItem('np-consent', v); } catch (e) {}
+        stored = v; ck.hidden = true;
+        if (v === 'granted') window.npLoadPixel();
+        else if (before === 'granted') location.reload();
+    }
+    if (!stored) ck.hidden = false;
+    document.getElementById('ckYes').addEventListener('click', function () { decide('granted'); });
+    document.getElementById('ckNo').addEventListener('click', function () { decide('denied'); });
+    document.querySelectorAll('.ck-open').forEach(function (b) { b.addEventListener('click', function () { ck.hidden = false; }); });
+
+    /* Black Friday: cuenta atrás; al terminar, la web vuelve sola al precio normal */
+    var bfEnd = new Date('2026-11-30T23:59:59+01:00').getTime(), cd = document.getElementById('bfCountdown');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tickBF() {
+        var ms = bfEnd - Date.now();
+        if (ms <= 0) { document.documentElement.classList.add('bf-over'); return; }
+        var sec = Math.floor(ms / 1000);
+        var v = { d: Math.floor(sec / 86400), h: Math.floor(sec % 86400 / 3600), m: Math.floor(sec % 3600 / 60), s: sec % 60 };
+        Object.keys(v).forEach(function (k) { cd.querySelector('[data-cd="' + k + '"]').textContent = pad(v[k]); });
+        var hc = document.getElementById('heroCd'); if (hc) hc.textContent = v.d + 'd ' + pad(v.h) + 'h ' + pad(v.m) + 'm ' + pad(v.s) + 's';
+        setTimeout(tickBF, 1000);
+    }
+    tickBF();
+
     /* Aviso de Mac */
     var macDlg = document.getElementById('macDlg');
-    document.getElementById('appDownloadMacBtn').addEventListener('click', function () { macDlg.showModal(); });
+    document.querySelectorAll('.mac-soon').forEach(function (b) { b.addEventListener('click', function () { macDlg.showModal(); }); });
     document.getElementById('macDlgClose').addEventListener('click', function () { macDlg.close(); });
     macDlg.addEventListener('click', function (e) { if (e.target === macDlg) macDlg.close(); });
 

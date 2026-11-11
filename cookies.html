@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de cookies | AstroHoracio</title>
+    <meta name="description" content="Qué cookies usa astrohoracio.com, para qué sirven y cómo cambiar tu elección.">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <style>
+        @font-face{font-family:'Newsreader';font-style:normal;font-weight:200 800;font-display:swap;src:url('Assets/fonts/Newsreader.woff2') format('woff2')}
+        @font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url('Assets/fonts/HankenGrotesk.woff2') format('woff2')}
+        :root{--ink:#0b0c0e;--ink-2:#131417;--line:#2b2e33;--paper:#f3f2ee;--muted:#a7a9ad;--ha:#f0b13c}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:var(--ink);color:var(--paper);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+        main{max-width:760px;margin:0 auto;padding:clamp(2rem,6vw,4.5rem) 16px 4rem}
+        a{color:var(--paper);text-underline-offset:3px}
+        .back{font-size:.92rem;color:var(--muted)}
+        h1,h2{font-family:'Newsreader',Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1.1}
+        h1{font-size:clamp(2.4rem,7vw,3.6rem);margin:1.5rem 0 .6rem}
+        h2{font-size:1.6rem;margin:2.4rem 0 .7rem}
+        p,li{color:var(--muted)}
+        p+p{margin-top:.8rem}
+        ul{margin:.6rem 0 0 1.2rem}
+        .date{font-size:.9rem}
+        .table{width:100%;overflow-x:auto;margin-top:.8rem}
+        table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:520px}
+        th,td{text-align:left;padding:.65rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+        th{color:var(--paper);font-weight:600}
+        td{color:var(--muted)}
+        button{font:inherit;cursor:pointer;margin-top:1rem;padding:.85em 1.3em;font-weight:600;background:var(--paper);color:var(--ink);border:1px solid var(--paper)}
+        button:hover{background:var(--ha);border-color:var(--ha)}
+        .ok{display:none;margin-top:.8rem;color:var(--ha)}
+    </style>
+</head>
+<body>
+<main>
+    <a class="back" href="/">← Volver a astrohoracio.com</a>
+    <h1>Política de cookies</h1>
+    <p class="date">Última actualización: 11 de noviembre de 2026</p>
+
+    <h2>Quién es el responsable</h2>
+    <p>Esta web es de AstroHoracio (Horacio Lander). Para cualquier duda sobre cookies o datos personales puedes escribir a <a href="mailto:astroian2026@gmail.com">astroian2026@gmail.com</a>.</p>
+
+    <h2>Qué son las cookies</h2>
+    <p>Son pequeños archivos que una web guarda en tu navegador. Algunas son necesarias para que la web funcione y otras sirven para medir visitas o campañas. Estas últimas solo se usan si das tu consentimiento.</p>
+
+    <h2>Cookies que usamos</h2>
+    <div class="table">
+        <table>
+            <thead><tr><th>Nombre</th><th>De quién</th><th>Para qué</th><th>Duración</th></tr></thead>
+            <tbody>
+                <tr><td>np-consent</td><td>Esta web (almacenamiento local)</td><td>Recordar si aceptas o rechazas las cookies. Es necesaria.</td><td>Hasta que la borres</td></tr>
+                <tr><td>lang</td><td>Esta web (almacenamiento local)</td><td>Recordar el idioma que eliges. Es necesaria.</td><td>Hasta que la borres</td></tr>
+                <tr><td>_fbp, fr</td><td>Meta Platforms Ireland (Meta Pixel)</td><td>Medir las visitas y el resultado de nuestras campañas en Facebook e Instagram. <strong>Solo si aceptas.</strong></td><td>Hasta 3 meses</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Meta puede tratar estos datos fuera del Espacio Económico Europeo. Lo hace con las garantías que establece la normativa europea, como el Marco de Privacidad de Datos UE-EE. UU. Puedes leer cómo los trata en su <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
+    <p>Las fuentes de la web están alojadas en nuestro propio servidor, así que no se conectan a Google Fonts. Los enlaces a PayPal, YouTube o el formulario de descarga te llevan a esos servicios, que aplican sus propias políticas.</p>
+
+    <h2>Cómo cambiar tu elección</h2>
+    <p>Puedes retirar tu consentimiento en cualquier momento. Al pulsar este botón se borra tu elección y la web volverá a preguntarte.</p>
+    <button type="button" id="reset">Borrar mi elección de cookies</button>
+    <p class="ok" id="ok">Hecho. Al volver a la web te preguntaremos de nuevo.</p>
+    <p>También puedes borrar o bloquear las cookies desde la configuración de tu navegador.</p>
+</main>
+<script>
+    document.getElementById('reset').addEventListener('click', function () {
+        try { localStorage.removeItem('np-consent'); } catch (e) {}
+        document.getElementById('ok').style.display = 'block';
+    });
+</script>
+</body>
+</html>
